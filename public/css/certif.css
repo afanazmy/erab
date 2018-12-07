@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+}
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+.cell {
+  min-height: 75px;
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+#i4qoaf {
+  display: block;
+  top: 20%;
+  position: relative;
+  height: 0;
+  align-self: center;
+}
+#ilaxkb {
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 0;
+  height: 100%;
+  width: 100%;
+  background-image: url();
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#iw4opq {
+  padding: 0 0 0 0;
+  top: 60%;
+  width: 100%;
+  margin: auto auto auto auto;
+  float: left;
+  display: block;
+  position: relative;
+  align-self: center;
+  text-align: center;
+  font-family: "Google Sans", Helvetica, serif;
+  color: #575654;
+  font-size: 15px;
+}
+#ipp38r {
+  display: block;
+  top: 21%;
+  position: relative;
+  height: 0;
+  align-self: center;
+}
+#iwtbyw {
+  padding: 0 0 0 0;
+  top: 45%;
+  width: 100%;
+  margin: auto auto auto auto;
+  float: left;
+  display: block;
+  position: relative;
+  align-self: center;
+  text-align: center;
+  font-family: "Google Sans", Helvetica, serif;
+  color: #575654;
+  font-size: 24px;
+  font-weight: 700;
+}
+#iumib2 {
+  display: block;
+  top: 22%;
+  position: relative;
+  height: 0;
+  align-self: center;
+}
+#iyknf5 {
+  padding: 0 0 0 0;
+  top: 30%;
+  width: 100%;
+  margin: auto auto auto auto;
+  float: left;
+  display: block;
+  position: relative;
+  align-self: center;
+  text-align: center;
+  font-family: "Google Sans", Helvetica, serif;
+  color: #575654;
+  font-size: 22px;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .row {
+    flex-wrap: wrap;
+  }
+}
