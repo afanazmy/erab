@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Online Certificate | HIMAKOMSI</title>
+    <title>e-Rancangan Anggaran Biaya</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('meta')
@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="#"><img src="{!! asset('notika/') !!}img/logo/logo.png" alt="" /></a>
+                        <a href="#"><img src="{!! asset('treviso/images/ERAB.png') !!}" alt="e-Rancangan Anggaran Biaya" /></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -126,15 +126,15 @@
                                     @endif
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                            <span class="navbar-links">{{ __('Logout') }}</span>
-                                        </a>
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            <span class="navbar-links">{{ __('Logout') }}</span>
+                            </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            </li>
                             @endguest --}}
                         </ul>
                     </div>
@@ -164,7 +164,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="footer-copy-right">
-                        <p>Code with <i class="fa fa-heart"></i>  by Muhammad 'Afan 'Azmi.</p>
+                        <p>Code with <i class="fa fa-heart"></i> by Muhammad 'Afan 'Azmi.</p>
                     </div>
                 </div>
             </div>
@@ -235,8 +235,8 @@
     <script src="{!! asset('notika/js/chosen/chosen.jquery.js') !!}"></script>
     <!-- bootstrap select JS
        ============================================ -->
-   <script src="{!! asset('notika/js/bootstrap-select/bootstrap-select.js') !!}"></script>
-	<!--  Chat JS
+    <script src="{!! asset('notika/js/bootstrap-select/bootstrap-select.js') !!}"></script>
+    <!--  Chat JS
 		============================================ -->
     <script src="{!! asset('notika/js/chat/moment.min.js') !!}"></script>
     <script src="{!! asset('notika/js/chat/jquery.chat.js') !!}"></script>
@@ -246,9 +246,24 @@
     <!-- Data Table JS
 		============================================ -->
     <script src="{!! asset('notika/js/data-table/jquery.dataTables.min.js') !!}"></script>
-	<!-- tawk chat JS
+    <!-- tawk chat JS
 		============================================ -->
     {{-- <script src="{!! asset('notika/js/tawk-chat.js') !!}"></script> --}}
+    <script src="{!! asset('js/jquery.inputmask.bundle.js') !!}" charset="utf-8"></script>
+    <script src="{!! asset('js/jquery.number.js') !!}" charset="utf-8"></script>
+    <script type="text/javascript">
+        $('.currency').inputmask("numeric", {
+            radixPoint: ",",
+            groupSeparator: ".",
+            digits: 2,
+            autoGroup: true,
+            rightAlign: false,
+            removeMaskOnSubmit: true,
+            oncleared: function() {
+                self.Value('');
+            }
+        });
+    </script>
     @yield('script')
 </body>
 

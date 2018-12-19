@@ -8,7 +8,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" href="favicon.ico">
-		<title>Treviso - Clean & Elegant Onepage Multipurpose Bootstrap HTML</title>
+		<title> e-RAB | Estimasi Meraih Visi </title>
 		<!-- Bootstrap core CSS -->
 		<link href="{!! asset('treviso/css/bootstrap.min.css') !!}" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -27,29 +27,55 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand page-scroll" href="#page-top"><img src="{!! asset('treviso/images/logo.png') !!}" alt="Treviso theme logo"></a>
+					<a class="navbar-brand page-scroll" href="#page-top"><img src="{!! asset('treviso/images/ERAB.png') !!}" alt="ERAB theme logo"></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="hidden">
-							<a href="#page-top"></a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#about">About</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#portfolio">Portfolio</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#team">Team</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#contact">Contact</a>
-						</li>
-                        <li>
-							<a class="page-scroll" href="{!! route('item') !!}">Item</a>
-						</li>
+						@guest
+							<li class="hidden">
+								<a href="#page-top"></a>
+							</li>
+							<li>
+								<a class="page-scroll" href="#about">About</a>
+							</li>
+							<li>
+								<a class="page-scroll" href="#portfolio">Portfolio</a>
+							</li>
+							<li>
+								<a class="page-scroll" href="#team">Team</a>
+							</li>
+							<li>
+								<a class="page-scroll" href="#contact">Contact</a>
+							</li>
+						@else
+							<li class="hidden">
+								<a href="#page-top"></a>
+							</li>
+							<li>
+								<a class="page-scroll" href="#about">About</a>
+							</li>
+							<li>
+								<a class="page-scroll" href="#portfolio">Portfolio</a>
+							</li>
+							<li>
+								<a class="page-scroll" href="#team">Team</a>
+							</li>
+							<li>
+								<a class="page-scroll" href="#contact">Contact</a>
+							</li>
+							@if (Auth::user()->role == "admin")
+								<li>
+									<a class="page-scroll" href="{!! route('item') !!}">Item</a>
+								</li>
+							@else
+								<li>
+									<a class="page-scroll" href="{{ route('project') }}">Project</a>
+								</li>
+							@endif
+						@endguest
+
+
                         @if (!Auth::user())
                             <li>
     							<a class="page-scroll" href="{{ route('login') }}">Login</a>
@@ -85,8 +111,10 @@
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<div class="section-title">
-						<h2>Our Works</h2>
-						<p>Our portfolio is the best way to show our work, you can see here a big range of our work. Check them all and you will find what you are looking for.</p>
+						<h2>Tipe Rumah</h2>
+						<p>
+							"Jenis tipe rumah diambil berdasarkan luas dari bangunan tersebut. Setiap tipe rumah inipun umumnya memiliki karakteristik khusus baik dari segi dimensi bangunan hingga kebutuhan ruang, meskipun pada akhirnya pengembang biasanya akan menyesuaikannya dengan konsep dari perumahan secara keseluruhan."
+						</p>
 					</div>
 				</div>
 			</div>
@@ -95,10 +123,10 @@
 				<div class="col-md-6 col-0-gutter">
 					<div class="ot-portfolio-item">
 						<figure class="effect-bubba">
-							<img src="{!! asset('treviso/images/demo/portfolio-1.jpg') !!}" alt="img02" class="img-responsive" />
+							<img src="{!! asset('treviso/images/demo/1.png') !!}" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Dean & Letter</h2>
-								<p>Branding, Design</p>
+								<h2>TIPE 36</h2>
+								<p>Minimalism, Economist</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-1">View more</a>
 							</figcaption>
 						</figure>
@@ -109,10 +137,10 @@
 				<div class="col-md-6 col-0-gutter">
 					<div class="ot-portfolio-item">
 						<figure class="effect-bubba">
-							<img src="{!! asset('treviso/images/demo/portfolio-2.jpg') !!}" alt="img02" class="img-responsive" />
+							<img src="{!! asset('treviso/images/demo/2.png') !!}" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Startup Framework</h2>
-								<p>Branding, Web Design</p>
+								<h2>TIPE 45</h2>
+								<p>Simple, Comfortable</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
 							</figcaption>
 						</figure>
@@ -125,10 +153,10 @@
 				<div class="col-md-6 col-0-gutter">
 					<div class="ot-portfolio-item">
 						<figure class="effect-bubba">
-							<img src="{!! asset('treviso/images/demo/portfolio-3.jpg') !!}" alt="img02" class="img-responsive" />
+							<img src="{!! asset('treviso/images/demo/3.png') !!}" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Lamp & Velvet</h2>
-								<p>Branding, Web Design</p>
+								<h2>TIPE 54</h2>
+								<p>Wide, Impressive</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-3">View more</a>
 							</figcaption>
 						</figure>
@@ -139,10 +167,10 @@
 				<div class="col-md-6 col-0-gutter">
 					<div class="ot-portfolio-item">
 						<figure class="effect-bubba">
-							<img src="{!! asset('treviso/images/demo/portfolio-4.jpg') !!}" alt="img02" class="img-responsive" />
+							<img src="{!! asset('treviso/images/demo/4.png') !!}" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Smart Name</h2>
-								<p>Branding, Design</p>
+								<h2>TIPE 60</h2>
+								<p>Elegance, Modern</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-4">View more</a>
 							</figcaption>
 						</figure>
@@ -151,34 +179,7 @@
 				<!-- end portfolio item -->
 			</div>
 			<div class="row row-0-gutter">
-				<!-- start portfolio item -->
-				<div class="col-md-6 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="{!! asset('treviso/images/demo/portfolio-5.jpg') !!}" alt="img02" class="img-responsive" />
-							<figcaption>
-								<h2>Fast People</h2>
-								<p>Branding, Web Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-5">View more</a>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<!-- end portfolio item -->
-				<!-- start portfolio item -->
-				<div class="col-md-6 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="{!! asset('treviso/images/demo/portfolio-6.jpg') !!}" alt="img02" class="img-responsive" />
-							<figcaption>
-								<h2>Kites & Stars</h2>
-								<p>Branding, Web Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<!-- end portfolio item -->
+
 			</div>
 			</div><!-- container -->
 		</section>
@@ -195,14 +196,14 @@
 				<div class="row">
 					<div class="col-md-6 text-center">
 						<div class="mz-about-container">
-							<p>A creative agency based on Candy Land, ready to boost your business with some beautifull templates. Lattes Agency is one of the best in town see more you will be amazed.</p>
+							<p>Merupakan sistem informasi dalam merancang dan memberikan estimasi anggaran dalam pembangunan sebuah perencanaan pembangunan terkhusus bidang properti. Dengan adanya sistem informasi ini diharapkan dapat mengefisiensikan pengeluaran dan terintegrasi pula dengan database sehingga dimudahkan dalam pembuatan laporan.</p>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<!-- skill bar item -->
 						<div class="skillbar-item">
 							<div class="skillbar" data-percent="90%">
-								<h3>Web design</h3>
+								<h3>Efficient</h3>
 								<div class="skillbar-bar">
 									<div class="skillbar-percent" style="width: 90%;">
 									</div>
@@ -212,7 +213,7 @@
 						<!-- skill bar item -->
 						<div class="skillbar-item">
 							<div class="skillbar" data-percent="80%">
-								<h3>Development</h3>
+								<h3>User Friendly</h3>
 								<div class="skillbar-bar">
 									<div class="skillbar-percent" style="width: 80%;">
 									</div>
@@ -222,7 +223,7 @@
 						<!-- skill bar item -->
 						<div class="skillbar-item">
 							<div class="skillbar" data-percent="85%">
-								<h3>Photography</h3>
+								<h3>Easy</h3>
 								<div class="skillbar-bar">
 									<div class="skillbar-percent" style="width: 85%;">
 									</div>
@@ -232,7 +233,7 @@
 						<!-- skill bar item -->
 						<div class="skillbar-item">
 							<div class="skillbar" data-percent="70%">
-								<h3>Marketing</h3>
+								<h3>Manageable</h3>
 								<div class="skillbar-bar">
 									<div class="skillbar-percent" style="width: 70%;">
 									</div>
@@ -246,7 +247,7 @@
 					<div class="col-md-3 col-0-gutter mz-about-default text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-briefcase ot-circle"></i>
-							<h3>Web Development</h3>
+							<h3>Efficient</h3>
 						</div>
 					</div>
 					<!-- end about module -->
@@ -254,7 +255,7 @@
 					<div class="col-md-3 col-0-gutter mz-about-dark text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-photo ot-circle"></i>
-							<h3>Visualisation</h3>
+							<h3>User Friendly</h3>
 						</div>
 					</div>
 					<!-- end about module -->
@@ -262,7 +263,7 @@
 					<div class="col-md-3 col-0-gutter mz-about-default text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-camera-retro ot-circle"></i>
-							<h3>Photography</h3>
+							<h3>Easy</h3>
 						</div>
 					</div>
 					<!-- end about module -->
@@ -270,7 +271,7 @@
 					<div class="col-md-3 col-0-gutter mz-about-dark text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-cube ot-circle"></i>
-							<h3>UI/UX Design</h3>
+							<h3>Manageable</h3>
 						</div>
 					</div>
 					<!-- end about module -->
@@ -296,9 +297,9 @@
 								<img src="{!! asset('treviso/images/demo/author-2.jpg') !!}" class="img-responsive" alt="author">
 							</div>
 							<div class="team-text">
-								<h3>TOM BEKERS</h3>
-								<div class="team-position">CEO & Web Design</div>
-								<p>Mida sit una namet, cons uectetur adipiscing adon elit. Aliquam vitae barasa droma.</p>
+								<h3>Farhan Reza S</h3>
+								<div class="team-position">Developer</div>
+								<p>He codes any programming language such as : C, C++, Java </p>
 							</div>
 						</div>
 					</div>
@@ -307,11 +308,11 @@
 					<div class="col-md-4">
 						<div class="team-item">
 							<div class="team-image">
-								<img src="{!! asset('treviso/images/demo/author-6.jpg') !!}" class="img-responsive" alt="author">
+								<img src="{!! asset('treviso/images/demo/novi.jpeg') !!}" class="img-responsive" alt="author">
 							</div>
 							<div class="team-text">
-								<h3>LINA GOSATA</h3>
-								<div class="team-position">Photography</div>
+								<h3>Noviana Widyaningrum</h3>
+								<div class="team-position">Conceptor and Data Research</div>
 								<p>Worsa dona namet, cons uectetur dipiscing adon elit. Aliquam vitae fringilla unda mir.</p>
 							</div>
 						</div>
@@ -324,8 +325,8 @@
 								<img src="{!! asset('treviso/images/demo/author-4.jpg') !!}" class="img-responsive" alt="author">
 							</div>
 							<div class="team-text">
-								<h3>John BEKERS</h3>
-								<div class="team-position">Marketing</div>
+								<h3>Reza Haris F. A</h3>
+								<div class="team-position">UI/UX Designer</div>
 								<p>Dolor sit don namet, cons uectetur beriscing adon elit. Aliquam vitae fringilla unda.</p>
 							</div>
 						</div>
@@ -341,7 +342,7 @@
 					<div class="col-lg-12 text-center">
 						<div class="section-title">
 							<h2>Contact Us</h2>
-							<p>If you have some Questions or need Help! Please Contact Us!<br>We make Cool and Clean Design for your Business</p>
+							<p>Apabila terdapat pertanyaan, kritik maupun saran silahkan mengisi form di bawah ini<br>We make Cool and Clean Design for your Business</p>
 						</div>
 					</div>
 				</div>
@@ -397,12 +398,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-1">Dean & Letter</h4>
+						<h4 class="modal-title" id="Modal-label-1">TIPE 36</h4>
 					</div>
 					<div class="modal-body">
-						<img src="{!! asset('treviso/images/demo/portfolio-1.jpg') !!}" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						<img src="{!! asset('treviso/images/demo/36.jpeg') !!}" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Minimalism</span><span>Economist</span></div>
+						<p>Rumah dengan ukuran 36 meter persegi yang biasanya jika dilihat dari jenisnya termasuk golongan rumah minimalis sederhana</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -417,12 +418,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-2">Startup Framework</h4>
+						<h4 class="modal-title" id="Modal-label-2">TIPE 45</h4>
 					</div>
 					<div class="modal-body">
-						<img src="{!! asset('treviso/images/demo/portfolio-2.jpg') !!}" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						<img src="{!! asset('treviso/images/demo/45.jpeg') !!}" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Modest</span><span>Comfortable</span></div>
+						<p>Rumah dengan ukuran 45 meter persegi yang biasanya jika dilihat dari jenisnya sudah temasuk golongan rumah minimalis mewah</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -437,12 +438,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-3">Lamp & Velvet</h4>
+						<h4 class="modal-title" id="Modal-label-3">TIPE 54</h4>
 					</div>
 					<div class="modal-body">
-						<img src="{!! asset('treviso/images/demo/portfolio-3.jpg') !!}" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						<img src="{!! asset('treviso/images/demo/54.jpeg') !!}" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Wide</span><span>Impressive</span></div>
+						<p>Rumah dengan ukuran 54 meter persegi jika dilihat dari jenisnya sudah termasuk rumah yang cenderung luas</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -457,12 +458,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-4">Smart Name</h4>
+						<h4 class="modal-title" id="Modal-label-4">TIPE 60</h4>
 					</div>
 					<div class="modal-body">
-						<img src="{!! asset('treviso/images/demo/portfolio-4.jpg') !!}" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						<img src="{!! asset('treviso/images/demo/60.jpeg') !!}" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Elegance</span><span>Modern</span></div>
+						<p>Rumah dengan ukuran 60 meter persegi jika dilihat dari jenisnya sudah termasuk rumah yang sangat luas dan memiliki kesan elegan</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -470,20 +471,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- Modal for portfolio item 5 -->
-		<div class="modal fade" id="Modal-5" tabindex="-1" role="dialog" aria-labelledby="Modal-label-5">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-5">Fast People</h4>
-					</div>
-					<div class="modal-body">
-						<img src="{!! asset('treviso/images/demo/portfolio-5.jpg') !!}" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
-					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>

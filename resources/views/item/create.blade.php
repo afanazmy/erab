@@ -21,7 +21,7 @@
     							</div>
     							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
     								<div class="breadcomb-report">
-    									<a href="" class="btn btn-default notika-btn-default waves-effect">Back</a>
+    									<a href="{{ route('item') }}" class="btn btn-default notika-btn-default waves-effect">Back</a>
     								</div>
     							</div>
     						</div>

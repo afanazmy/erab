@@ -40,13 +40,13 @@
                     <div class="data-table-list">
                         <div class="basic-tb-hd">
                             <h2>List Item</h2>
-                            {{-- <p>Jika ada data yang ingin diubah silahkan hubungi Sekretaris Umum / Sekretaris Jenderal</p> --}}
+                            {{-- <p>Jika ada data yang ingin diubah silahkan hubungi Admin</p> --}}
                             {{-- <div class="alert alert-success alert-dismissible" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">
                                         <i class="notika-icon notika-close"></i>
                                     </span>
-                                </button> Jika ada data kepanitiaan yang ingin diubah silahkan hubungi Sekretaris Umum / Sekretaris Jenderal
+                                </button> Jika ada data kepanitiaan yang ingin diubah silahkan hubungi Admin
                             </div> --}}
                         </div>
                         <div class="table-responsive">
