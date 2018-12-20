@@ -24,5 +24,8 @@ Route::get('/item/delete/{id}', 'ItemController@destroy')->name('item.destroy');
 Route::get('/customer/project', 'ProjectController@index')->name('project');
 Route::get('/customer/project/create', 'ProjectController@create')->name('project.create');
 Route::post('/customer/project/store', 'ProjectController@store')->name('project.store');
+Route::get('/customer/project/{id}', 'ProjectController@show')->name('project.show');
+Route::get('/customer/project/print/{id}', 'ProjectController@print')->name('project.print');
+Route::post('/customer/project/delete/{id}', 'ProjectController@destroy')->name('project.destroy');
 
 Auth::routes();

@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="#"><img src="{!! asset('treviso/images/ERAB.png') !!}" alt="e-Rancangan Anggaran Biaya" /></a>
+                        <a href="{{ URL::to('/') }}"><img src="{!! asset('treviso/images/ERAB.png') !!}" alt="e-Rancangan Anggaran Biaya" /></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">

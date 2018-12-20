@@ -8,6 +8,7 @@ use App\Project;
 use App\Item;
 
 use DB;
+use PDF;
 use Auth;
 use Alert;
 use Carbon\Carbon;
@@ -88,7 +89,26 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = Project::where('id', $id)->with('items')->first();
+        // dd($project);
+        $total = 0;
+        return view('customer.detail', compact('project', 'total'));
+    }
+
+    /**
+     * Show the view for printing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function print($id)
+    {
+        $project = Project::where('id', $id)->with('items')->first();
+        // dd($project);
+        $total = 0;
+        // return view('layouts.print', compact('project', 'total'));
+        $pdf = PDF::loadView('layouts.print', compact('project', 'total'));
+        return $pdf->stream('invoice.pdf');
     }
 
     /**
@@ -122,6 +142,15 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project = Project::where('id', $id)->first();
+        $project->delete();
+
+        if ($project) {
+            Alert::success('Success', 'Successfully delete project');
+            return redirect()->back();
+        } else {
+            Alert::success('Error', 'Whoops something error');
+            return redirect()->back();
+        }
     }
 }

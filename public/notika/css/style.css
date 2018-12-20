@@ -4595,7 +4595,7 @@ body.box-layout {
 	margin: 8px 0px;
 	text-align: right;
 }
-.breadcomb-report .btn{
+/*.breadcomb-report .btn{
 	background: #00c292;
     color: #fff;
     box-shadow: none;
@@ -4606,7 +4606,7 @@ body.box-layout {
 	background: #00c292;
     box-shadow: none;
     outline: none;
-}
+}*/
 #sidebar.active .sidebar-nav ul.metismenu li ul.submenu-angle.layout-mini-tl{
 	top: -322px;
 }

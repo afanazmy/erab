@@ -74,8 +74,11 @@
                                     <td>{{ number_format($total,0,".",".") }}</td>
                                     <td>{{ Carbon\Carbon::parse($project->created_at)->toFormattedDateString() }}</td>
                                     <td style="text-align: center">
-                                        <a href="" class="btn btn-lightgreen lightgreen-icon-notika waves-effect"><i class="notika-icon notika-menus"></i></a>
-                                        <a href="" class="btn btn-danger danger-icon-notika waves-effect"><i class="notika-icon notika-close"></i></a>
+                                        <a href="{!! route('project.show', ['id' => $project->id]) !!}" class="btn btn-lightgreen lightgreen-icon-notika waves-effect"><i class="notika-icon notika-menus"></i></a>
+                                        <button onclick="deleteFunction({{ $project->id }})" class="btn btn-danger danger-icon-notika waves-effect"><i class="notika-icon notika-close"></i></button>
+                                        <form id="delete-{{ $project->id }}" action="{!! route('project.destroy', ['id' => $project->id]) !!}" method="post">
+                                            {{ csrf_field() }}
+                                        </form>
                                     </td>
                                 </tr>
                                 @php
@@ -113,5 +116,23 @@
         });
 
     })(jQuery);
+</script>
+<script type="text/javascript">
+    function deleteFunction(id) {
+        this.id = id;
+        Swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result) {
+                document.getElementById("delete-" + this.id).submit();
+            }
+        });
+    }
 </script>
 @endsection
