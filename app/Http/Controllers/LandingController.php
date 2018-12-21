@@ -11,4 +11,9 @@ class LandingController extends Controller
     {
         return view('index');
     }
+
+    public function send(Request $request)
+    {
+
+    }
 }
